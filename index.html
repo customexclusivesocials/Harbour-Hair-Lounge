@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harbour Hair Lounge | Hair Salon &amp; Hair Artists in Port Colborne, Ontario</title>
+<meta name="description" content="Harbour Hair Lounge is a boutique hair salon at 215 King Street, Port Colborne, Ontario. Meet our hair artists Madeline, Katie, Karly, and Sav for custom colour, balayage, cuts, and styling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Harbour Hair Lounge",
+  "description": "Boutique hair salon in Port Colborne, Ontario specializing in custom colour, balayage, blonding, cuts, and styling.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "215 King Street",
+    "addressLocality": "Port Colborne",
+    "addressRegion": "ON",
+    "postalCode": "L3K 4G6",
+    "addressCountry": "CA"
+  },
+  "sameAs": [
+    "https://www.instagram.com/harbourhairlounge/",
+    "https://www.instagram.com/harbourhairlounge_madeline/",
+    "https://www.instagram.com/harbourhairlounge_katie/",
+    "https://www.instagram.com/harbourhairlounge_karly/",
+    "https://www.instagram.com/harbourhair_sav/"
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Madeline",
+      "jobTitle": "Hair Artist",
+      "sameAs": "https://www.instagram.com/harbourhairlounge_madeline/"
+    },
+    {
+      "@type": "Person",
+      "name": "Katie",
+      "jobTitle": "Hair Artist",
+      "sameAs": "https://www.instagram.com/harbourhairlounge_katie/"
+    },
+    {
+      "@type": "Person",
+      "name": "Karly",
+      "jobTitle": "Hair Artist",
+      "sameAs": "https://www.instagram.com/harbourhairlounge_karly/"
+    },
+    {
+      "@type": "Person",
+      "name": "Sav",
+      "jobTitle": "Hair Artist",
+      "sameAs": "https://www.instagram.com/harbourhair_sav/"
+    }
+  ]
+}
+</script>
+<style>
+/* ===== Tokens ===== */
+:root{
+  --ivory:#f4efe8;
+  --sand:#e6dccd;
+  --sand-deep:#d9ccb9;
+  --taupe:#8b7a6b;
+  --brass:#9a7f55;
+  --espresso:#2a211c;
+  --char:#1d1815;
+  --char-soft:#251f1b;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --pad:clamp(1.25rem,5vw,4.5rem);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--espresso);font:400 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+.wrap{padding:clamp(4.5rem,10vw,9rem) var(--pad)}
+.eyebrow{display:block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:.85rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:1rem 1.9rem;background:var(--espresso);color:var(--ivory);text-decoration:none;font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;transition:background .3s ease,color .3s ease,transform .3s ease}
+.btn:hover{background:var(--brass);color:var(--ivory)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.ghost:hover{background:var(--ivory);color:var(--espresso)}
+
+/* Editorial inline link */
+.link-editorial{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding-bottom:.3rem;border-bottom:1px solid currentColor;transition:color .25s ease,border-color .25s ease}
+.link-editorial .arrow{display:inline-block;transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.link-editorial:hover{color:var(--brass)}
+.link-editorial:hover .arrow{transform:translateX(4px)}
+
+/* Image slots: refined editorial framing with subtle tone fallback until real image loads */
+.slot{position:relative;background:linear-gradient(160deg,var(--sand),#cdbfae);overflow:hidden;color:var(--taupe)}
+.slot::before{content:"";position:absolute;inset:.75rem;border:1px solid rgba(139,122,107,.24);pointer-events:none;z-index:1;transition:opacity .35s ease}
+.slot::after{content:attr(data-label);position:absolute;inset:auto 1rem 1.15rem 1rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:.95rem;letter-spacing:.03em;opacity:.85}
+.slot.has-img::before,.slot.has-img::after{opacity:0;pointer-events:none}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.22,1,.36,1),opacity .45s ease}
+
+/* ===== Nav ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1.2rem var(--pad);padding-top:calc(1.2rem + env(safe-area-inset-top));color:var(--ivory);transition:background .3s ease,color .3s ease,box-shadow .3s ease}
+header.solid{background:rgba(244,239,232,.96);backdrop-filter:blur(8px);color:var(--espresso);box-shadow:0 1px 0 rgba(42,33,28,.08)}
+.logo{font-family:var(--serif);font-size:1.4rem;text-decoration:none;letter-spacing:.01em}
+nav{display:flex;align-items:center;gap:2rem;font-size:.86rem;letter-spacing:.04em}
+nav a{text-decoration:none;position:relative;padding-block:.2rem}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+nav a:hover{color:var(--brass)}
+nav a:hover::after{transform:scaleX(1)}
+@media(max-width:760px){
+  nav a:not(.keep){display:none}
+  nav{gap:1.1rem}
+}
+
+/* ===== Hero ===== */
+.hero{min-height:100svh;background:var(--char);color:var(--ivory);position:relative;display:flex;align-items:flex-end}
+.hero .slot{position:absolute;inset:0;background:linear-gradient(170deg,#4a3d33,#1d1815)}
+.hero .slot::before{display:none}
+.hero .slot::after{color:#b9a995;inset:50% 0 auto}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(29,24,21,.82),rgba(29,24,21,.15) 60%);z-index:1}
+.hero-in{position:relative;z-index:2;padding:0 var(--pad) clamp(4rem,9vh,7rem);width:100%}
+.hero h1{font-size:clamp(3.8rem,13vw,11rem);letter-spacing:-.03em}
+.hero h1 em{display:block;font-style:italic;padding-left:.12em}
+.hero p{margin:1.6rem 0 2rem;max-width:30rem;font-size:1.05rem;color:#e8dfd2}
+.hero .row{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .btn:not(.ghost){background:var(--ivory);color:var(--espresso)}
+.hero .btn:not(.ghost):hover{background:var(--brass);color:var(--ivory)}
+
+/* ===== About + Services ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about .slot{aspect-ratio:4/5}
+.about p{max-width:32rem;margin-top:1.5rem;font-family:var(--serif);font-size:1.35rem;line-height:1.55}
+.services{background:var(--sand)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(2rem,5vw,4rem);margin-top:3.5rem}
+.svc h3{font-size:2rem;margin-bottom:1rem;border-bottom:1px solid var(--taupe);padding-bottom:.7rem}
+.svc li{list-style:none;padding:.4rem 0;display:flex;justify-content:space-between;gap:1rem}
+.svc b{font-weight:500;white-space:nowrap}
+.note{margin-top:2.5rem;color:var(--taupe);font-size:.92rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* ===== Selected Work ===== */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 2.2rem}
+.filters button{font:inherit;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.1rem;border:1px solid var(--taupe);background:none;color:inherit;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease}
+.filters button[aria-pressed=true]{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.masonry{columns:3 260px;column-gap:1.1rem}
+.masonry-item{border:0;padding:0;background:none;width:100%;display:block;margin:0 0 1.1rem;break-inside:avoid;cursor:zoom-in;text-align:left}
+.masonry-item:hover .slot img{transform:scale(1.03)}
+.masonry .slot{width:100%}
+.r1{aspect-ratio:3/4}.r2{aspect-ratio:4/5}.r3{aspect-ratio:1/1}.r4{aspect-ratio:2/3}
+
+/* ===== Meet the Artists / Editorial Team Section ===== */
+.team{background:var(--char);color:var(--ivory)}
+.team-head{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.5rem,5vw,4rem);align-items:end;padding-bottom:clamp(2.5rem,5vw,4rem);border-bottom:1px solid rgba(230,220,205,.16)}
+.team-head .eyebrow{color:#c5a97d}
+.team-head h2{letter-spacing:-.02em}
+.team-sub{font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.8rem);font-style:italic;color:#e4d9ca;line-height:1.4;margin-bottom:.75rem}
+.team-intro{font-size:.94rem;color:#b9a995;max-width:34rem;line-height:1.7}
+
+/* Editorial Dossier Spreads */
+.artists-list{display:flex;flex-direction:column}
+.artist-feature{padding:clamp(3rem,6vw,5.5rem) 0;border-bottom:1px solid rgba(230,220,205,.14);display:grid;grid-template-columns:minmax(260px,4.5fr) minmax(0,7.5fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.artist-feature:last-child{border-bottom:none;padding-bottom:1rem}
+
+/* Alternating asymmetric editorial rhythm on desktop */
+@media(min-width:961px){
+  .artist-feature:nth-child(even){grid-template-columns:minmax(0,7.5fr) minmax(260px,4.5fr)}
+  .artist-feature:nth-child(even) .artist-portrait-col{order:2}
+  .artist-feature:nth-child(even) .artist-dossier-col{order:1}
+}
+
+.artist-portrait-col{position:relative}
+.artist-portrait-link{display:block;text-decoration:none}
+.artist-portrait{aspect-ratio:3/4;background:linear-gradient(160deg,#3d322a,#221c18);position:relative}
+.artist-portrait::before{border-color:rgba(230,220,205,.16)}
+.artist-portrait::after{color:#a89886}
+.artist-portrait-link:hover .artist-portrait img{transform:scale(1.03)}
+
+.artist-index{display:flex;justify-content:space-between;align-items:center;margin-top:.85rem;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#a89886}
+
+/* Dossier Header & Metadata */
+.artist-dossier-col{display:flex;flex-direction:column;justify-content:space-between}
+.artist-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem 2rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(230,220,205,.14)}
+.artist-title-group h3{font-size:clamp(2.6rem,5vw,4.2rem);line-height:.95;margin-bottom:.45rem}
+.artist-title-group h3 a{text-decoration:none;transition:color .25s ease}
+.artist-title-group h3 a:hover{color:#c5a97d}
+.artist-role-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#c5a97d}
+.artist-role-row .sep{opacity:.4}
+.artist-handle{text-transform:none;letter-spacing:.03em;font-size:.9rem;color:#d6c9b8;text-decoration:none;transition:color .25s ease}
+.artist-handle:hover{color:#ffffff}
+
+.artist-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem}
+.artist-actions .link-editorial{color:var(--ivory)}
+.artist-actions .link-editorial:hover{color:#c5a97d}
+.artist-actions .link-secondary{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#b9a995;text-decoration:none;transition:color .25s ease}
+.artist-actions .link-secondary:hover{color:var(--ivory)}
+
+/* Bio & Specialties (rendered cleanly when supplied) */
+.artist-meta{margin-top:1.4rem;display:grid;gap:1rem}
+.artist-bio{font-family:var(--serif);font-size:1.3rem;line-height:1.55;color:#e8dfd2;max-width:40rem}
+.artist-specialties-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#a89886;margin-bottom:.25rem}
+.artist-specialties-val{font-size:.92rem;color:#e8dfd2;letter-spacing:.04em}
+
+/* Curated 4-Piece Editorial Portfolio Grid per Artist */
+.artist-gallery-wrap{margin-top:1.85rem}
+.artist-gallery-caption{display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#9c8c7a}
+.artist-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:.85rem}
+.work-tile{border:0;padding:0;background:none;cursor:zoom-in;display:block;width:100%;position:relative;text-align:left}
+.work-tile .slot{width:100%;height:100%;background:linear-gradient(160deg,#382e27,#231d19)}
+.work-tile .slot::before{border-color:rgba(230,220,205,.14);inset:.5rem}
+.work-tile .slot::after{color:#9c8c7a;font-size:.82rem;inset:auto .5rem .65rem .5rem}
+.work-tile:hover .slot img{transform:scale(1.035)}
+
+/* Editorial 4-item layout: asymmetric hero + supporting detail frames */
+.work-tile.w-1{grid-column:span 5;aspect-ratio:3/4}
+.work-tile.w-2{grid-column:span 7;aspect-ratio:4/3}
+.work-tile.w-3{grid-column:span 7;aspect-ratio:4/3}
+.work-tile.w-4{grid-column:span 5;aspect-ratio:3/4}
+
+/* Subtle Booking CTA below Team */
+.team-cta{margin-top:clamp(3rem,6vw,5rem);padding-top:clamp(2.5rem,5vw,4rem);border-top:1px solid rgba(230,220,205,.18);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem 2.5rem}
+.team-cta .eyebrow{color:#c5a97d;margin-bottom:.4rem}
+.team-cta h3{font-size:clamp(2rem,4vw,3rem);color:var(--ivory)}
+.team-cta p{color:#c8baa8;font-size:.98rem;margin-top:.35rem}
+.team-cta .btn{background:var(--ivory);color:var(--espresso)}
+.team-cta .btn:hover{background:var(--brass);color:var(--ivory)}
+
+@media(max-width:960px){
+  .team-head{grid-template-columns:1fr}
+  .artist-feature{grid-template-columns:1fr;gap:2rem}
+  .artist-portrait{max-width:26rem}
+}
+@media(max-width:640px){
+  .artist-portrait{max-width:100%}
+  .artist-gallery{grid-template-columns:repeat(2,1fr);gap:.65rem}
+  .work-tile.w-1,.work-tile.w-2,.work-tile.w-3,.work-tile.w-4{grid-column:span 1;aspect-ratio:3/4}
+}
+
+/* ===== Dedicated Stylist Dossier View (#madeline, #katie, #karly, #sav) ===== */
+#profile{display:none;min-height:100svh;background:var(--ivory);color:var(--espresso)}
+body.profile-open main{display:none}
+body.profile-open #profile{display:block}
+.pf{display:grid;grid-template-columns:minmax(280px,4.5fr) minmax(0,7.5fr);min-height:76svh;border-bottom:1px solid var(--sand)}
+.pf .slot{min-height:56svh;background:linear-gradient(160deg,var(--sand),#cdbfae)}
+.pf-text{padding:7.5rem var(--pad) 3.5rem;align-self:center}
+.pf-text h1{font-size:clamp(3.4rem,8vw,6.5rem);margin-bottom:.5rem}
+.pf-meta-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:1.6rem}
+.pf-meta-bar a{text-transform:none;letter-spacing:.02em;font-size:.95rem;color:var(--espresso);text-decoration:none;border-bottom:1px solid var(--taupe)}
+.pf-meta-bar a:hover{color:var(--brass);border-color:var(--brass)}
+.pf-text .bio{font-family:var(--serif);font-size:1.4rem;line-height:1.55;margin:1.2rem 0 1.6rem;max-width:34rem}
+.pf-specialties{margin-bottom:2rem}
+.pf-specialties strong{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:.35rem}
+.pf-cta-row{display:flex;flex-wrap:wrap;gap:.85rem}
+.back{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:2rem;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--taupe);transition:color .25s ease}
+.back:hover{color:var(--espresso)}
+.pf-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:2.2rem}
+.pf-gallery-grid .work-tile{aspect-ratio:3/4}
+@media(max-width:820px){
+  .pf{grid-template-columns:1fr}
+  .pf .slot{min-height:52svh}
+  .pf-text{padding-top:2.5rem}
+}
+
+/* ===== Instagram + Footer ===== */
+.follow{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin:2.5rem 0}
+.follow .slot{aspect-ratio:1}
+footer{background:var(--espresso);color:var(--ivory);padding:4rem var(--pad) 7rem;display:grid;gap:1rem}
+footer a{color:var(--ivory)}
+.footer-artists{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:.5rem;font-size:.88rem;color:#d6c9b8}
+.footer-artists a{text-decoration:none;border-bottom:1px solid rgba(230,220,205,.3);padding-bottom:.1rem}
+.footer-artists a:hover{color:var(--ivory);border-color:var(--ivory)}
+
+/* ===== Sticky Mobile Bar ===== */
+.dock{display:none;position:fixed;inset:auto 0 0 0;z-index:30;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:var(--ivory);box-shadow:0 -1px 0 var(--sand);gap:.6rem}
+.dock .btn{flex:1;text-align:center;padding:.9rem .5rem}
+@media(max-width:760px){.dock{display:flex}}
+
+/* ===== Lightbox ===== */
+dialog{border:0;background:rgba(20,16,14,.96);width:100%;height:100%;max-width:none;max-height:none;color:var(--ivory);padding:1.5rem}
+dialog[open]{display:grid;place-items:center}
+dialog .lb-frame{display:flex;flex-direction:column;align-items:center;gap:.9rem;max-width:min(90vw,72svh*.8)}
+dialog .slot{width:min(90vw,72svh*.8);aspect-ratio:4/5;background:linear-gradient(160deg,#382e27,#201a16)}
+dialog .lb-caption{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:#d6c9b8;text-align:center}
+dialog button{position:absolute;top:1.25rem;right:1.25rem;font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid rgba(244,239,232,.5);color:var(--ivory);padding:.6rem 1.15rem;cursor:pointer;transition:background .25s ease,color .25s ease}
+dialog button:hover{background:var(--ivory);color:var(--espresso)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<header id="top">
+  <a class="logo" href="#">Harbour Hair Lounge</a>
+  <nav aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a class="keep" href="#team">Artists</a>
+    <a class="keep" data-book>Book</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="slot" data-label="Hero image" data-src="images/hero.jpg" data-alt="Soft blonde waves styled at Harbour Hair Lounge in Port Colborne"></div>
+  <div class="hero-in">
+    <h1>Harbour<em>Hair Lounge</em></h1>
+    <p>Colour, cuts and styling in the heart of Port Colborne.</p>
+    <div class="row">
+      <a class="btn" data-book>Book your appointment</a>
+      <a class="btn ghost" href="#team">Meet the artists</a>
+      <a class="btn ghost" data-ig target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap about" id="about">
+  <div class="slot" data-label="Salon image" data-src="images/salon.jpg" data-alt="Harbour Hair Lounge storefront on King Street, Port Colborne"></div>
+  <div>
+    <span class="eyebrow">215 King Street · Port Colborne</span>
+    <h2>A boutique salon in downtown Port Colborne.</h2>
+    <p>Specializing in balayage, blondes and much more. We look forward to making your hair goals a reality.</p>
+  </div>
+</section>
+
+<section class="wrap services" id="services">
+  <h2>Services</h2>
+  <div class="svc">
+    <div><h3>Blonde + balayage</h3><ul>
+      <li><span>Full colour + balayage</span><b>$330</b></li>
+      <li><span>On scalp blonde</span><b>$240</b></li>
+      <li><span>Toner refresh</span><b>$120</b></li>
+      <li><span>Partial highlight, with haircut</span><b>$210</b></li>
+      <li><span>Full highlight, with haircut</span><b>$265</b></li></ul></div>
+    <div><h3>Colour</h3><ul>
+      <li><span>Full colour</span><b>$180</b></li>
+      <li><span>Root touch up</span><b>$140</b></li>
+      <li><span>Root splash</span><b>$100</b></li></ul></div>
+    <div><h3>Style</h3><ul>
+      <li><span>Down style</span><b>$95</b></li></ul></div>
+  </div>
+  <p class="note">Prices as listed on Fresha. Final pricing is confirmed at your consultation.</p>
+</section>
+
+<section class="wrap" id="work">
+  <h2>Selected work</h2>
+  <div class="filters" role="group" aria-label="Filter portfolio" id="filters"></div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<section class="wrap team" id="team" aria-labelledby="team-heading">
+  <div class="team-head">
+    <div>
+      <span class="eyebrow">Harbour Hair Lounge · Port Colborne</span>
+      <h2 id="team-heading">Meet the Artists</h2>
+    </div>
+    <div>
+      <p class="team-sub">Meet the artists behind the chair.</p>
+      <p class="team-intro">Independent hairstylists in Port Colborne bringing custom hair colour, dimensional blonding, and tailored styling to 215 King Street. Explore each artist&rsquo;s curated portfolio and follow their latest chair work on Instagram.</p>
+    </div>
+  </div>
+
+  <div class="artists-list" id="artists-list"></div>
+
+  <div class="team-cta">
+    <div>
+      <span class="eyebrow">215 King Street · Port Colborne, Ontario</span>
+      <h3>Ready for your next look?</h3>
+      <p>Book your appointment at Harbour Hair Lounge.</p>
+    </div>
+    <a class="btn" data-book>Book an appointment</a>
+  </div>
+</section>
+
+<section class="wrap" id="follow-section">
+  <h2>Follow the Harbour</h2>
+  <p>@harbourhairlounge</p>
+  <div class="follow" id="follow"></div>
+  <a class="btn" data-ig target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+</section>
+</main>
+
+<section id="profile" aria-live="polite"></section>
+
+<footer id="contact">
+  <strong style="font-family:var(--serif);font-size:1.8rem;font-weight:400">Harbour Hair Lounge</strong>
+  <address style="font-style:normal">215 King Street, Port Colborne, Ontario L3K 4G6</address>
+  <a data-call hidden>Call the salon</a>
+  <a data-ig target="_blank" rel="noopener noreferrer">@harbourhairlounge</a>
+  <div class="footer-artists" aria-label="Salon hair artists Instagram profiles">
+    <a href="https://www.instagram.com/harbourhairlounge_madeline/" target="_blank" rel="noopener noreferrer">@harbourhairlounge_madeline</a>
+    <a href="https://www.instagram.com/harbourhairlounge_katie/" target="_blank" rel="noopener noreferrer">@harbourhairlounge_katie</a>
+    <a href="https://www.instagram.com/harbourhairlounge_karly/" target="_blank" rel="noopener noreferrer">@harbourhairlounge_karly</a>
+    <a href="https://www.instagram.com/harbourhair_sav/" target="_blank" rel="noopener noreferrer">@harbourhair_sav</a>
+  </div>
+</footer>
+
+<div class="dock"><a class="btn" data-book>Book</a><a class="btn ghost" data-call hidden>Call</a><a class="btn ghost" data-ig target="_blank" rel="noopener noreferrer">Instagram</a></div>
+
+<dialog id="lb" aria-label="Image viewer">
+  <button id="lbx" type="button">Close</button>
+  <div class="lb-frame">
+    <div class="slot" id="lbimg"></div>
+    <p class="lb-caption" id="lbcaption"></p>
+  </div>
+</dialog>
+
+<script>
+/* =====================================================
+   CONFIG:
+   - BOOKING_URL & PHONE: verified salon details
+   - TEAM: Individual Hair Artists at Harbour Hair Lounge.
+     Portrait photos use existing assets where available;
+     portfolio slots use clean /images/team/<artist>-01.jpg..04.jpg
+     paths that show refined editorial placeholders until
+     real studio photography is dropped into /images/team/.
+   ===================================================== */
+const CONFIG = {
+  BOOKING_URL: "https://www.fresha.com/a/harbour-hair-lounge-port-colborne-215-king-street-gyipxr8x",
+  PHONE: "",
+  IG: "https://www.instagram.com/harbourhairlounge/",
+  TEAM: [
+    {
+      id: "madeline",
+      name: "Madeline",
+      role: "Hair Artist",
+      ig: "harbourhairlounge_madeline",
+      igUrl: "https://www.instagram.com/harbourhairlounge_madeline/",
+      bio: "",
+      specialties: [],
+      photo: "images/madeline.jpg",
+      photoFallback: "images/team/madeline-01.jpg",
+      portfolio: [
+        { src: "images/team/madeline-01.jpg", label: "Madeline · Look 01", alt: "Madeline hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/madeline-02.jpg", label: "Madeline · Look 02", alt: "Madeline hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/madeline-03.jpg", label: "Madeline · Look 03", alt: "Madeline hair artistry look 3 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/madeline-04.jpg", label: "Madeline · Look 04", alt: "Madeline hair artistry look 4 at Harbour Hair Lounge Port Colborne" }
+      ]
+    },
+    {
+      id: "katie",
+      name: "Katie",
+      role: "Hair Artist",
+      ig: "harbourhairlounge_katie",
+      igUrl: "https://www.instagram.com/harbourhairlounge_katie/",
+      bio: "",
+      specialties: [],
+      photo: "images/katie.jpg",
+      photoFallback: "images/team/katie-01.jpg",
+      portfolio: [
+        { src: "images/team/katie-01.jpg", label: "Katie · Look 01", alt: "Katie hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/katie-02.jpg", label: "Katie · Look 02", alt: "Katie hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/katie-03.jpg", label: "Katie · Look 03", alt: "Katie hair artistry look 3 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/katie-04.jpg", label: "Katie · Look 04", alt: "Katie hair artistry look 4 at Harbour Hair Lounge Port Colborne" }
+      ]
+    },
+    {
+      id: "karly",
+      name: "Karly",
+      role: "Hair Artist",
+      ig: "harbourhairlounge_karly",
+      igUrl: "https://www.instagram.com/harbourhairlounge_karly/",
+      bio: "",
+      specialties: [],
+      photo: "images/team/karly-01.jpg",
+      photoFallback: "",
+      portfolio: [
+        { src: "images/team/karly-01.jpg", label: "Karly · Look 01", alt: "Karly hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/karly-02.jpg", label: "Karly · Look 02", alt: "Karly hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/karly-03.jpg", label: "Karly · Look 03", alt: "Karly hair artistry look 3 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/karly-04.jpg", label: "Karly · Look 04", alt: "Karly hair artistry look 4 at Harbour Hair Lounge Port Colborne" }
+      ]
+    },
+    {
+      id: "sav",
+      name: "Sav",
+      role: "Hair Artist",
+      ig: "harbourhair_sav",
+      igUrl: "https://www.instagram.com/harbourhair_sav/",
+      bio: "",
+      specialties: [],
+      photo: "images/savanna.jpg",
+      photoFallback: "images/team/sav-01.jpg",
+      portfolio: [
+        { src: "images/team/sav-01.jpg", label: "Sav · Look 01", alt: "Sav hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/sav-02.jpg", label: "Sav · Look 02", alt: "Sav hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/sav-03.jpg", label: "Sav · Look 03", alt: "Sav hair artistry look 3 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/sav-04.jpg", label: "Sav · Look 04", alt: "Sav hair artistry look 4 at Harbour Hair Lounge Port Colborne" }
+      ]
+    }
+  ],
+  WORK: [
+    { src: "images/blonde.jpg", cat: "Blonde", r: "r2" },
+    { src: "images/red.jpg", cat: "Colour", r: "r3" }
+  ],
+  FOLLOW: ["images/blonde.jpg", "images/red.jpg", "images/salon.jpg"]
+};
+
+/* ---------- helpers ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const bookHref = CONFIG.BOOKING_URL || CONFIG.IG;
+
+// Builds an image slot; real image replaces the editorial tone block only if the file loads.
+function slot(src, label, cls = "", altText = "", fallbackSrc = "") {
+  const d = document.createElement("div");
+  d.className = `slot ${cls}`.trim();
+  d.dataset.label = label;
+  if (src) {
+    const i = new Image();
+    i.alt = altText || label;
+    i.loading = "lazy";
+    i.decoding = "async";
+    i.onload = () => d.classList.add("has-img");
+    i.onerror = () => {
+      if (fallbackSrc && i.dataset.triedFallback !== "1") {
+        i.dataset.triedFallback = "1";
+        i.src = fallbackSrc;
+      } else {
+        i.remove();
+      }
+    };
+    i.src = src;
+    d.appendChild(i);
+  }
+  return d;
+}
+
+function openLightbox(src, label, altText) {
+  const t = $("#lbimg");
+  t.replaceWith(Object.assign(slot(src, label, "", altText), { id: "lbimg" }));
+  $("#lbcaption").textContent = label;
+  $("#lb").showModal();
+}
+
+/* ---------- static image slots (data-src) ---------- */
+$$("[data-src]").forEach(el => {
+  const i = new Image();
+  i.alt = el.dataset.alt || "";
+  i.onload = () => el.classList.add("has-img");
+  i.onerror = () => i.remove();
+  i.src = el.dataset.src;
+  el.appendChild(i);
+});
+
+/* ---------- links ---------- */
+$$("[data-book]").forEach(a => { a.href = bookHref; a.target = "_blank"; a.rel = "noopener noreferrer"; });
+$$("[data-ig]").forEach(a => { a.href = CONFIG.IG; a.target = "_blank"; a.rel = "noopener noreferrer"; });
+if (CONFIG.PHONE) $$("[data-call]").forEach(a => { a.href = "tel:" + CONFIG.PHONE; a.hidden = false; });
+
+/* ---------- selected work portfolio ---------- */
+const cats = ["All", ...new Set(CONFIG.WORK.map(w => w.cat))];
+const filters = $("#filters"), masonry = $("#masonry"), lb = $("#lb");
+function renderWork(cat = "All") {
+  masonry.replaceChildren();
+  CONFIG.WORK.filter(w => cat === "All" || w.cat === cat).forEach(w => {
+    const f = document.createElement("button");
+    f.type = "button";
+    f.className = "masonry-item";
+    f.setAttribute("aria-label", `View ${w.cat} image`);
+    f.appendChild(slot(w.src, w.cat, w.r, `${w.cat} hair colour and styling at Harbour Hair Lounge Port Colborne`));
+    f.onclick = () => openLightbox(w.src, w.cat, `${w.cat} at Harbour Hair Lounge`);
+    masonry.appendChild(f);
+  });
+}
+cats.forEach(c => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.textContent = c;
+  b.setAttribute("aria-pressed", c === "All");
+  b.onclick = () => {
+    $$("button", filters).forEach(x => x.setAttribute("aria-pressed", x === b));
+    renderWork(c);
+  };
+  filters.appendChild(b);
+});
+renderWork();
+$("#lbx").onclick = () => lb.close();
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+
+/* ---------- Meet the Artists editorial dossier section ---------- */
+const artistsList = $("#artists-list");
+CONFIG.TEAM.forEach((artist, idx) => {
+  const article = document.createElement("article");
+  article.className = "artist-feature";
+  article.id = `artist-${artist.id}`;
+
+  // Portrait column
+  const portraitCol = document.createElement("div");
+  portraitCol.className = "artist-portrait-col";
+
+  const portraitLink = document.createElement("a");
+  portraitLink.className = "artist-portrait-link";
+  portraitLink.href = `#${artist.id}`;
+  portraitLink.setAttribute("aria-label", `Explore ${artist.name}'s portfolio and artist profile`);
+  portraitLink.appendChild(
+    slot(
+      artist.photo,
+      `${artist.name} · ${artist.role}`,
+      "artist-portrait",
+      `${artist.name}, ${artist.role} at Harbour Hair Lounge in Port Colborne`,
+      artist.photoFallback
+    )
+  );
+
+  const indexRow = document.createElement("div");
+  indexRow.className = "artist-index";
+  indexRow.innerHTML = `<span>Artist 0${idx + 1} / 0${CONFIG.TEAM.length}</span><span>Port Colborne</span>`;
+
+  portraitCol.append(portraitLink, indexRow);
+
+  // Dossier column
+  const dossierCol = document.createElement("div");
+  dossierCol.className = "artist-dossier-col";
+
+  const topGroup = document.createElement("div");
+  const headerBar = document.createElement("div");
+  headerBar.className = "artist-header";
+
+  const titleGroup = document.createElement("div");
+  titleGroup.className = "artist-title-group";
+  titleGroup.innerHTML = `
+    <h3><a href="#${artist.id}">${artist.name}</a></h3>
+    <div class="artist-role-row">
+      <span>${artist.role}</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="artist-handle" href="${artist.igUrl}" target="_blank" rel="noopener noreferrer">@${artist.ig}</a>
+    </div>
+  `;
+
+  const actions = document.createElement("div");
+  actions.className = "artist-actions";
+  actions.innerHTML = `
+    <a class="link-secondary" href="#${artist.id}">Artist Dossier</a>
+    <a class="link-editorial" href="${artist.igUrl}" target="_blank" rel="noopener noreferrer" aria-label="View ${artist.name} on Instagram (@${artist.ig})">
+      <span>View Instagram</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  `;
+
+  headerBar.append(titleGroup, actions);
+  topGroup.appendChild(headerBar);
+
+  // Only render bio or specialties if non-empty (no fabricated credentials)
+  if (artist.bio || (artist.specialties && artist.specialties.length)) {
+    const meta = document.createElement("div");
+    meta.className = "artist-meta";
+    if (artist.bio) {
+      const bioP = document.createElement("p");
+      bioP.className = "artist-bio";
+      bioP.textContent = artist.bio;
+      meta.appendChild(bioP);
+    }
+    if (artist.specialties && artist.specialties.length) {
+      const spWrap = document.createElement("div");
+      spWrap.innerHTML = `<div class="artist-specialties-label">Specialties</div><div class="artist-specialties-val">${artist.specialties.join(" · ")}</div>`;
+      meta.appendChild(spWrap);
+    }
+    topGroup.appendChild(meta);
+  }
+
+  // Curated 4-piece portfolio gallery
+  const galleryWrap = document.createElement("div");
+  galleryWrap.className = "artist-gallery-wrap";
+  galleryWrap.innerHTML = `
+    <div class="artist-gallery-caption">
+      <span>Curated Portfolio</span>
+      <span>@${artist.ig}</span>
+    </div>
+  `;
+
+  const galleryGrid = document.createElement("div");
+  galleryGrid.className = "artist-gallery";
+
+  artist.portfolio.forEach((item, pIdx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `work-tile w-${pIdx + 1}`;
+    btn.setAttribute("aria-label", `Inspect ${item.label}`);
+    btn.appendChild(slot(item.src, item.label, "", item.alt));
+    btn.onclick = () => openLightbox(item.src, item.label, item.alt);
+    galleryGrid.appendChild(btn);
+  });
+
+  galleryWrap.appendChild(galleryGrid);
+  dossierCol.append(topGroup, galleryWrap);
+
+  article.append(portraitCol, dossierCol);
+  artistsList.appendChild(article);
+});
+
+/* ---------- Instagram strip ---------- */
+CONFIG.FOLLOW.forEach((s, i) => $("#follow").appendChild(slot(s, `Instagram image ${i + 1}`, "", `Harbour Hair Lounge Instagram preview ${i + 1}`)));
+
+/* ---------- Dedicated Stylist Profile Views (hash routing: #madeline, #katie, #karly, #sav) ---------- */
+const header = $("header");
+function route() {
+  const t = CONFIG.TEAM.find(x => "#" + x.id === location.hash);
+  document.body.classList.toggle("profile-open", !!t);
+  header.classList.toggle("solid", !!t || scrollY > 80);
+  const p = $("#profile");
+  if (!t) {
+    p.replaceChildren();
+    return;
+  }
+  p.replaceChildren();
+
+  const wrap = document.createElement("div");
+  wrap.className = "pf";
+
+  const txt = document.createElement("div");
+  txt.className = "pf-text";
+  txt.innerHTML = `
+    <a class="back" href="#team">&larr; Back to all artists</a>
+    <span class="eyebrow">Harbour Hair Lounge · Port Colborne</span>
+    <h1></h1>
+    <div class="pf-meta-bar">
+      <span class="role"></span>
+      <span aria-hidden="true">&middot;</span>
+      <a class="ig-link" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+    <p class="bio"></p>
+    <div class="pf-specialties"><strong>Specialties</strong><span class="sp-list"></span></div>
+    <div class="pf-cta-row">
+      <a class="btn" data-book target="_blank" rel="noopener noreferrer">Book an appointment</a>
+      <a class="btn ghost ig-btn" target="_blank" rel="noopener noreferrer">View Instagram &rarr;</a>
+    </div>
+  `;
+
+  $("h1", txt).textContent = t.name;
+  $(".role", txt).textContent = t.role;
+  const igLink = $(".ig-link", txt);
+  igLink.textContent = `@${t.ig}`;
+  igLink.href = t.igUrl;
+
+  const igBtn = $(".ig-btn", txt);
+  igBtn.href = t.igUrl;
+
+  if (t.bio) {
+    $(".bio", txt).textContent = t.bio;
+  } else {
+    $(".bio", txt).remove();
+  }
+
+  if (t.specialties && t.specialties.length) {
+    $(".sp-list", txt).textContent = t.specialties.join(" · ");
+  } else {
+    $(".pf-specialties", txt).remove();
+  }
+
+  $("[data-book]", txt).href = bookHref;
+
+  wrap.append(
+    slot(t.photo, `${t.name} · ${t.role}`, "", `${t.name}, ${t.role} at Harbour Hair Lounge`, t.photoFallback),
+    txt
+  );
+  p.appendChild(wrap);
+
+  const gal = document.createElement("div");
+  gal.className = "wrap";
+  gal.innerHTML = `
+    <span class="eyebrow">Selected Chair Work</span>
+    <h2>${t.name}&rsquo;s Portfolio</h2>
+    <div class="pf-gallery-grid"></div>
+  `;
+  const grid = $(".pf-gallery-grid", gal);
+  t.portfolio.forEach(item => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "work-tile";
+    btn.setAttribute("aria-label", `Inspect ${item.label}`);
+    btn.appendChild(slot(item.src, item.label, "", item.alt));
+    btn.onclick = () => openLightbox(item.src, item.label, item.alt);
+    grid.appendChild(btn);
+  });
+  p.appendChild(gal);
+  scrollTo(0, 0);
+}
+
+addEventListener("hashchange", route);
+addEventListener("scroll", () => header.classList.toggle("solid", document.body.classList.contains("profile-open") || scrollY > 80), { passive: true });
+route();
+</script>
+</body>
+</html>
