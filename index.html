@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harbour Hair Lounge | Hair Salon in Port Colborne, Ontario</title>
+<meta name="description" content="Harbour Hair Lounge is a hair salon at 215 King Street, Port Colborne, Ontario. Colour, balayage, cuts, blowouts and styling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Harbour Hair Lounge","address":{"@type":"PostalAddress","streetAddress":"215 King Street","addressLocality":"Port Colborne","addressRegion":"ON","postalCode":"L3K 4G6","addressCountry":"CA"},"sameAs":["https://www.instagram.com/harbourhairlounge/"]}</script>
+<style>
+/* ===== Tokens ===== */
+:root{--ivory:#f4efe8;--sand:#e6dccd;--taupe:#8b7a6b;--brass:#9a7f55;--espresso:#2a211c;--char:#1d1815;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif;--pad:clamp(1.25rem,5vw,4.5rem)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--espresso);font:400 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+.wrap{padding:clamp(4.5rem,10vw,9rem) var(--pad)}
+.btn{display:inline-block;padding:1rem 1.9rem;background:var(--espresso);color:var(--ivory);text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.04em;transition:background .25s}
+.btn:hover{background:var(--brass)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.ghost:hover{background:var(--ivory);color:var(--espresso)}
+/* image slots: shows tone block until a real file loads */
+.slot{position:relative;background:linear-gradient(160deg,var(--sand),#cdbfae);overflow:hidden;color:var(--taupe)}
+.slot::after{content:attr(data-label);position:absolute;inset:auto 0 .8rem 0;text-align:center;font-size:.72rem;letter-spacing:.08em}
+.slot.has-img::after{display:none}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* ===== Nav ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1.2rem var(--pad);padding-top:calc(1.2rem + env(safe-area-inset-top));color:var(--ivory);mix-blend-mode:normal;transition:background .3s,color .3s}
+header.solid{background:var(--ivory);color:var(--espresso)}
+.logo{font-family:var(--serif);font-size:1.35rem;text-decoration:none}
+nav{display:flex;gap:2rem;font-size:.88rem}
+nav a{text-decoration:none}
+nav a:hover{color:var(--brass)}
+@media(max-width:760px){nav a:not(.keep){display:none}nav{gap:1rem}}
+/* ===== Hero ===== */
+.hero{min-height:100svh;background:var(--char);color:var(--ivory);position:relative;display:flex;align-items:flex-end}
+.hero .slot{position:absolute;inset:0;background:linear-gradient(170deg,#4a3d33,#1d1815)}
+.hero .slot::after{color:#b9a995;inset:50% 0 auto}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(29,24,21,.78),rgba(29,24,21,0) 60%);z-index:1}
+.hero-in{position:relative;z-index:2;padding:0 var(--pad) clamp(4rem,9vh,7rem);width:100%}
+.hero h1{font-size:clamp(3.8rem,13vw,11rem);letter-spacing:-.03em}
+.hero h1 em{display:block;font-style:italic;padding-left:.12em}
+.hero p{margin:1.6rem 0 2rem;max-width:30rem;font-size:1.05rem;color:#e8dfd2}
+.hero .row{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .btn:not(.ghost){background:var(--ivory);color:var(--espresso)}
+.hero .btn:not(.ghost):hover{background:var(--brass);color:var(--ivory)}
+/* ===== About + services ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about .slot{aspect-ratio:4/5}
+.about p{max-width:32rem;margin-top:1.5rem;font-family:var(--serif);font-size:1.35rem;line-height:1.55}
+.services{background:var(--sand)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(2rem,5vw,4rem);margin-top:3.5rem}
+.svc h3{font-size:2rem;margin-bottom:1rem;border-bottom:1px solid var(--taupe);padding-bottom:.7rem}
+.svc li{list-style:none;padding:.4rem 0;display:flex;justify-content:space-between;gap:1rem}.svc b{font-weight:500;white-space:nowrap}
+.note{margin-top:2.5rem;color:var(--taupe);font-size:.92rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+/* ===== Portfolio ===== */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 2.2rem}
+.filters button{font:inherit;font-size:.85rem;padding:.55rem 1.1rem;border:1px solid var(--taupe);background:none;color:inherit;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.masonry{columns:3 260px;column-gap:1rem}
+.masonry figure{break-inside:avoid;margin:0 0 1rem;cursor:zoom-in;border:0;padding:0;width:100%;display:block}
+.masonry .slot{width:100%}
+.r1{aspect-ratio:3/4}.r2{aspect-ratio:4/5}.r3{aspect-ratio:1/1}.r4{aspect-ratio:2/3}
+/* ===== Team ===== */
+.team{background:var(--char);color:var(--ivory)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:3rem}
+.tcard{text-decoration:none;display:block}
+.tcard .slot{aspect-ratio:3/4;background:linear-gradient(160deg,#4a3d33,#2a211c)}
+.tcard h3{font-size:2rem;margin-top:1rem}
+.tcard span{font-size:.88rem;color:#b9a995}
+/* stylist profile view (#katie etc.) */
+#profile{display:none;min-height:100svh;background:var(--ivory)}
+body.profile-open main{display:none}
+body.profile-open #profile{display:block}
+.pf{display:grid;grid-template-columns:1fr 1fr;min-height:80svh}
+.pf .slot{min-height:60svh}
+.pf-text{padding:8rem var(--pad) 3rem;align-self:center}
+.pf-text h1{font-size:clamp(3.5rem,9vw,7rem)}
+.pf-text p{margin:1.2rem 0;max-width:30rem}
+.back{display:inline-block;margin-bottom:2rem;font-size:.88rem}
+@media(max-width:760px){.pf{grid-template-columns:1fr}.pf-text{padding-top:2rem}}
+/* ===== Instagram + footer ===== */
+.follow{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:2.5rem 0}
+.follow .slot{aspect-ratio:1}
+@media(max-width:760px){.follow{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--espresso);color:var(--ivory);padding:4rem var(--pad) 7rem;display:grid;gap:1rem}
+footer a{color:var(--ivory)}
+/* ===== Sticky mobile bar ===== */
+.dock{display:none;position:fixed;inset:auto 0 0 0;z-index:30;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:var(--ivory);box-shadow:0 -1px 0 var(--sand);gap:.6rem}
+.dock .btn{flex:1;text-align:center;padding:.9rem .5rem}
+@media(max-width:760px){.dock{display:flex}}
+/* ===== Lightbox ===== */
+dialog{border:0;background:rgba(20,16,14,.96);width:100%;height:100%;max-width:none;max-height:none;color:var(--ivory)}
+dialog[open]{display:grid;place-items:center}
+dialog .slot{width:min(90vw,70svh*.8);aspect-ratio:4/5}
+dialog button{position:absolute;top:1rem;right:1rem;font:inherit;background:none;border:1px solid var(--ivory);color:var(--ivory);padding:.6rem 1.1rem;cursor:pointer}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header id="top">
+  <a class="logo" href="#">Harbour Hair Lounge</a>
+  <nav aria-label="Main"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#team">Team</a><a class="keep" data-book>Book</a></nav>
+</header>
 
+<main>
+<section class="hero">
+  <div class="slot" data-label="Hero image" data-src="images/hero.jpg" data-alt="Soft blonde waves styled at Harbour Hair Lounge"></div>
+  <div class="hero-in">
+    <h1>Harbour<em>Hair Lounge</em></h1>
+    <p>Colour, cuts and styling in the heart of Port Colborne.</p>
+    <div class="row"><a class="btn" data-book>Book your appointment</a><a class="btn ghost" href="#team">Meet the team</a><a class="btn ghost" data-ig>Instagram</a></div>
+  </div>
+</section>
+
+<section class="wrap about" id="about">
+  <div class="slot" data-label="Salon image" data-src="images/salon.jpg" data-alt="Harbour Hair Lounge storefront on King Street, Port Colborne"></div>
+  <div>
+    <h2>A boutique salon in downtown Port Colborne.</h2>
+    <p>Specializing in balayage, blondes and much more. We look forward to making your hair goals a reality.</p>
+  </div>
+</section>
+
+<section class="wrap services" id="services">
+  <h2>Services</h2>
+  <div class="svc">
+    <div><h3>Blonde + balayage</h3><ul>
+      <li><span>Full colour + balayage</span><b>$330</b></li>
+      <li><span>On scalp blonde</span><b>$240</b></li>
+      <li><span>Toner refresh</span><b>$120</b></li>
+      <li><span>Partial highlight, with haircut</span><b>$210</b></li>
+      <li><span>Full highlight, with haircut</span><b>$265</b></li></ul></div>
+    <div><h3>Colour</h3><ul>
+      <li><span>Full colour</span><b>$180</b></li>
+      <li><span>Root touch up</span><b>$140</b></li>
+      <li><span>Root splash</span><b>$100</b></li></ul></div>
+    <div><h3>Style</h3><ul>
+      <li><span>Down style</span><b>$95</b></li></ul></div>
+  </div>
+  <p class="note">Prices as listed on Fresha. Final pricing is confirmed at your consultation.</p>
+</section>
+
+<section class="wrap" id="work">
+  <h2>Selected work</h2>
+  <div class="filters" role="group" aria-label="Filter portfolio" id="filters"></div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<section class="wrap team" id="team">
+  <h2>The team</h2>
+  <div class="tgrid" id="tgrid"></div>
+</section>
+
+<section class="wrap" id="follow">
+  <h2>Follow the Harbour</h2>
+  <p>@harbourhairlounge</p>
+  <div class="follow" id="follow"></div>
+  <a class="btn" data-ig target="_blank" rel="noopener">Follow on Instagram</a>
+</section>
+</main>
+
+<section id="profile" aria-live="polite"></section>
+
+<footer id="contact">
+  <strong style="font-family:var(--serif);font-size:1.8rem;font-weight:400">Harbour Hair Lounge</strong>
+  <address style="font-style:normal">215 King Street, Port Colborne, Ontario L3K 4G6</address>
+  <a data-call hidden>Call the salon</a>
+  <a data-ig target="_blank" rel="noopener">@harbourhairlounge</a>
+</footer>
+
+<div class="dock"><a class="btn" data-book>Book</a><a class="btn ghost" data-call hidden>Call</a><a class="btn ghost" data-ig target="_blank" rel="noopener">Instagram</a></div>
+
+<dialog id="lb" aria-label="Image viewer"><button id="lbx">Close</button><div class="slot" id="lbimg"></div></dialog>
+
+<script>
+/* =====================================================
+   CONFIG: the only part you need to edit.
+   Fill BOOKING_URL and PHONE with the salon's verified details.
+   While empty, Book buttons fall back to Instagram, and Call hides.
+   Drop photos in /images and list filenames below.
+   ===================================================== */
+const CONFIG = {
+  BOOKING_URL: "https://www.fresha.com/a/harbour-hair-lounge-port-colborne-215-king-street-gyipxr8x",
+  PHONE: "",         // not yet verified, so Call buttons stay hidden until this is filled in
+  IG: "https://www.instagram.com/harbourhairlounge/",
+  // Names and portraits come from the salon's Fresha team. Add bio and specialties when the stylist supplies them.
+  TEAM: [
+    {id:"katie",   name:"Katie",   ig:"harbourhairlounge_katie",    role:"Hairstylist", bio:"", specialties:[], photo:"images/katie.jpg"},
+    {id:"madeline",name:"Madeline",ig:"harbourhairlounge_madeline", role:"Hairstylist", bio:"", specialties:[], photo:"images/madeline.jpg"},
+    {id:"savanna", name:"Savanna", ig:"harbourhair_sav",            role:"Hairstylist", bio:"", specialties:[], photo:"images/savanna.jpg"}
+  ],
+  // category: Blonde, Colour, Balayage, Cuts... stylist = team id (optional, shows the image on that stylist's page)
+  WORK: [
+    {src:"images/blonde.jpg",cat:"Blonde",r:"r2"},
+    {src:"images/red.jpg",cat:"Colour",r:"r3"}
+  ],
+  FOLLOW:["images/blonde.jpg","images/red.jpg","images/salon.jpg"]
+};
+
+/* ---------- helpers ---------- */
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+const bookHref = CONFIG.BOOKING_URL || CONFIG.IG;
+
+// Builds an image slot; real image replaces the tone block only if the file loads.
+function slot(src, label, cls=""){
+  const d = document.createElement("div");
+  d.className = `slot ${cls}`; d.dataset.label = label;
+  if (src){
+    const i = new Image(); i.alt = label; i.loading = "lazy";
+    i.onload = () => d.classList.add("has-img"); i.onerror = () => i.remove();
+    i.src = src; d.appendChild(i);
+  }
+  return d;
+}
+
+/* ---------- static image slots (data-src) ---------- */
+$$("[data-src]").forEach(el => {
+  const i = new Image(); i.alt = el.dataset.alt || ""; i.onload = () => el.classList.add("has-img"); i.onerror = () => i.remove(); i.src = el.dataset.src; el.appendChild(i);
+});
+
+/* ---------- links ---------- */
+$$("[data-book]").forEach(a => {a.href = bookHref; a.target="_blank"; a.rel="noopener"});
+$$("[data-ig]").forEach(a => a.href = CONFIG.IG);
+if (CONFIG.PHONE) $$("[data-call]").forEach(a => {a.href = "tel:" + CONFIG.PHONE; a.hidden = false});
+
+/* ---------- portfolio ---------- */
+const cats = ["All", ...new Set(CONFIG.WORK.map(w => w.cat))];
+const filters = $("#filters"), masonry = $("#masonry"), lb = $("#lb");
+function renderWork(cat="All"){
+  masonry.replaceChildren();
+  CONFIG.WORK.filter(w => cat==="All" || w.cat===cat).forEach(w => {
+    const f = document.createElement("button"); f.className="masonry-item"; f.style.cssText="border:0;padding:0;background:none;width:100%;display:block;margin:0 0 1rem;break-inside:avoid;cursor:zoom-in";
+    f.setAttribute("aria-label", `View ${w.cat} image`);
+    f.appendChild(slot(w.src, w.cat, w.r));
+    f.onclick = () => { const t=$("#lbimg"); t.replaceWith(Object.assign(slot(w.src,w.cat),{id:"lbimg"})); lb.showModal(); };
+    masonry.appendChild(f);
+  });
+}
+cats.forEach(c => {
+  const b = document.createElement("button"); b.textContent = c; b.setAttribute("aria-pressed", c==="All");
+  b.onclick = () => { $$("button",filters).forEach(x=>x.setAttribute("aria-pressed",x===b)); renderWork(c); };
+  filters.appendChild(b);
+});
+renderWork();
+$("#lbx").onclick = () => lb.close();
+lb.addEventListener("click", e => { if(e.target===lb) lb.close(); });
+
+/* ---------- team grid + instagram strip ---------- */
+CONFIG.TEAM.forEach(t => {
+  const a = document.createElement("a"); a.className="tcard"; a.href="#"+t.id;
+  a.append(slot(t.photo, `Portrait: ${t.name}`), Object.assign(document.createElement("h3"),{textContent:t.name}), Object.assign(document.createElement("span"),{textContent:`${t.role}. View portfolio`}));
+  $("#tgrid").appendChild(a);
+});
+CONFIG.FOLLOW.forEach((s,i) => $("#follow").appendChild(slot(s, `Instagram image ${i+1}`)));
+
+/* ---------- stylist profile views (hash routing: #katie) ---------- */
+function route(){
+  const t = CONFIG.TEAM.find(x => "#"+x.id === location.hash);
+  document.body.classList.toggle("profile-open", !!t);
+  header.classList.toggle("solid", !!t || scrollY > 80);
+  if(!t){ $("#profile").replaceChildren(); return; }
+  const p = $("#profile"); p.replaceChildren();
+  const wrap = document.createElement("div"); wrap.className="pf";
+  const txt = document.createElement("div"); txt.className="pf-text";
+  txt.innerHTML = `<a class="back" href="#team">Back to the team</a><h1></h1><p class="role"></p><p class="bio"></p><ul class="sp" style="list-style:none;margin-bottom:1.5rem"></ul>
+    <a class="btn" data-book>Book with ${t.name}</a> <a class="btn ghost" target="_blank" rel="noopener" href="https://www.instagram.com/${t.ig}/">@${t.ig}</a>`;
+  $("h1",txt).textContent = t.name; $(".role",txt).textContent = t.role;
+  $(".bio",txt).textContent = t.bio; if(!t.bio) $(".bio",txt).remove();
+  t.specialties.forEach(s => $(".sp",txt).append(Object.assign(document.createElement("li"),{textContent:s})));
+  $("[data-book]",txt).href = bookHref;
+  wrap.append(slot(t.photo, `Portrait: ${t.name}`), txt); p.appendChild(wrap);
+  const mine = CONFIG.WORK.filter(w => w.stylist===t.id);
+  if(!mine.length) { scrollTo(0,0); return; }
+  const gal = document.createElement("div"); gal.className="wrap";
+  gal.innerHTML = `<h2>Selected work</h2><div class="masonry" style="margin-top:2rem"></div>`;
+  mine.forEach(w => $(".masonry",gal).appendChild(slot(w.src, `${t.name}: ${w.cat}`, w.r)));
+  p.appendChild(gal); scrollTo(0,0);
+}
+const header = $("header");
+addEventListener("hashchange", route);
+addEventListener("scroll", () => header.classList.toggle("solid", document.body.classList.contains("profile-open") || scrollY > 80), {passive:true});
+route();
+</script>
+</body>
+</html>
