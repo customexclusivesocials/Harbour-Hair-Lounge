@@ -345,12 +345,23 @@ dialog button:hover{background:var(--ivory);color:var(--espresso)}
   </div>
   <p class="note">Prices as listed on Fresha. Final pricing is confirmed at your consultation.</p>
 </section>
+  <section class="wrap" id="work">
 
-<section class="wrap" id="work">
-  <h2>Selected work</h2>
-  <div class="filters" role="group" aria-label="Filter portfolio" id="filters"></div>
-  <div class="masonry" id="masonry"></div>
-</section>
+<h2>Selected work</h2>
+
+<div class="filters" role="group" aria-label="Filter portfolio" id="filters"></div>
+
+<div class="masonry" id="masonry"></div>
+
+</section> 
+
+WORK: [
+    { src: "blonde.jpg", cat: "Blonde", r: "r2" },
+    { src: "red.jpg", cat: "Colour", r: "r3" },
+    // Add new images below:
+    { src: "images/balayage-1.jpg", cat: "Balayage", r: "r1" },
+    { src: "images/cuts-1.jpg", cat: "Cuts", r: "r4" }
+  ],
 
 <section class="wrap team" id="team" aria-labelledby="team-heading">
   <div class="team-head">
@@ -433,9 +444,9 @@ const CONFIG = {
       bio: "",
       specialties: [],
       photo: "madeline.jpg",
-      photoFallback: "images/team/madeline-01.jpg",
+      photoFallback: "madeline.jpg",
       portfolio: [
-        { src: "images/team/madeline-01.html", label: "Madeline · Look 01", alt: "Madeline hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
+        { src: "images/team/madeline-01.jpg", label: "Madeline · Look 01", alt: "Madeline hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
         { src: "images/team/madeline-02.html", label: "Madeline · Look 02", alt: "Madeline hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
         { src: "images/team/madeline-03.html", label: "Madeline · Look 03", alt: "Madeline hair artistry look 3 at Harbour Hair Lounge Port Colborne" },
         { src: "images/team/madeline-04.html", label: "Madeline · Look 04", alt: "Madeline hair artistry look 4 at Harbour Hair Lounge Port Colborne" }
@@ -449,8 +460,8 @@ const CONFIG = {
       igUrl: "https://www.instagram.com/harbourhairlounge_katie/",
       bio: "",
       specialties: [],
-      photo: "images/katie.jpg",
-      photoFallback: "images/team/katie-01.jpg",
+      photo: "katie.jpg",
+      photoFallback: "katie.jpg",
       portfolio: [
         { src: "images/team/katie-01.jpg", label: "Katie · Look 01", alt: "Katie hair artistry look 1 at Harbour Hair Lounge Port Colborne" },
         { src: "images/team/katie-02.jpg", label: "Katie · Look 02", alt: "Katie hair artistry look 2 at Harbour Hair Lounge Port Colborne" },
